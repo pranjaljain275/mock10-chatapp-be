@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(cors());
 app.use("/", userRouter);
 
+app.get("/", (req,res)=>{res.send("Welcome to chat app")});
+
 const httpServer = http.createServer(app);
 
 const io = socketServer(httpServer);
